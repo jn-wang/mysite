@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>视频播放</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="My Play Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+
+<link href="/static/bootstrap/css/bootstrap.min.css" rel='stylesheet' type='text/css' media="all" />
+<!-- //bootstrap -->
+<link href="/static/css/dashboard.css" rel="stylesheet">
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom Theme files -->
+<link href="/static/css/style1.css" rel='stylesheet' type='text/css' media="all" />
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+
+</head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header col-md-2">
+          <a class="navbar-brand col-md-2  col-xs-8" href="/XB"><h1><img src="/static/images/XB/logo.png" alt="" /></h1></a>
+        </div>
+			<div>
+				<form action="single" method="POST">
+
+                  <div class="col-lg-6">
+                      <select name="api" value="{{ api }}" class="btn btn-default" style="border:0px;font-size:18px">
+                        <option value="https://jqaaa.com/jx.php?url=">选择接口</option>
+                        <option value="https://api.bbbbbb.me/jx/?url=">万能接口1</option>
+                        <option value="https://jqaaa.com/jx.php?url=">万能接口2</option>
+                        <option value="https://jiexi.071811.cc/jx2.php?url=">万能接口3</option>
+                        <option value="https://jqaaa.com/jq3/?url=&url=">万能接口4</option>
+                        <option value="https://yun.baiyug.cn/vip/index.php?url=">万能接口5</option>
+                        <option value="https://jiexi.071811.cc/jx2.php?url=">万能接口6</option>
+                        <option value="https://www.wocao.xyz/index.php?url=">腾讯视频接口1</option>
+                        <option value="https://vip.hackmg.com/jx/index.php?url=">爱奇艺超清接口1</option>
+                        <option value="https://api.baiyug.cn/vip/index.php?url=">爱奇艺超清接口2</option>
+                        <option value="https://jiexi.92fz.cn/player/vip.php?url=">爱奇艺超清接口3</option>
+                        <option value="https://jx.ovov.cc/?url=">芒果TV超清接口</option>
+                        <option value="https://jx.618ge.com/?url=">芒果TV手机接口</option>
+                        <option value="https://vip.jlsprh.com/?url=">优酷超清接口</option>
+                        <option value="https://vip.jlsprh.com/index.php?url=">搜狐视频接口</option>
+                        <option value="https://jx.598110.com/?url=">乐视视频接口</option>
+                      </select>
+                        <div class="input-group">
+                          <input type="text" class="form-control" name="url" placeholder="请输入视频网址" value="{{ url }}">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">Go!</button>
+                          </span>
+                        </div><!-- /input-group -->
+                      </div><!-- /.col-lg-6 -->
+				</form>
+            </div>
+		<div class="clearfix"> </div>
+      </div>
+    </nav>
+    <div style="width:80%; height:512px; margin: 0 auto;margin-top: 88px;">
+        <iframe frameborder="0" width="100%" height="100%" scrolling="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" src="{{ api }}{{ url }}"></iframe>
+    </div>
+    <script src="/static/js/bootstrap.min.js"></script>
+  </body>
+</html>

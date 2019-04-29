@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 强制移动设备以app模式打开页面(即在移动设备下全屏，仅支持部分浏览器) -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="full-screen" content="yes"><!--UC强制全屏-->
+    <meta name="browsermode" content="application"><!--UC应用模式-->
+    <meta name="x5-fullscreen" content="true"><!--QQ强制全屏-->
+    <meta name="x5-page-mode" content="app"><!--QQ应用模式-->
+    <title>湖北电力员工安全技术等级认证安全知识题库</title>
+    <script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+    <style>
+html,body,.warp {
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	background:#eee;
+}
+html {
+	font-size:62.5%;
+}
+.warp {
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+}
+header {
+	width:100%;
+	height:4rem;
+	background:deepskyblue;
+	text-align:center;
+	line-height:4rem;
+	font-size:18px;
+	color:white;
+}
+section {
+	-webkit-box-flex:1;
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+}
+section .inputTxt {
+	width:100%;
+	height:6rem;
+	overflow:hidden;
+	position:relative;
+}
+section .inputTxt input {
+	width:100%;
+	height:100%;
+	outline:none;
+	border:none;
+	padding-left:20px;
+	font-size:18px;
+}
+section .inputTxt .icon {
+	width:20px;
+	height:20px;
+	position:absolute;
+	top:25px;
+	right:30px;
+	display:none;
+}
+section .inputTxt .icon img {
+	width:100%;
+	height:100%;
+}
+section .promise {
+	color:red;
+	font-size:14px;
+	height:14px;
+	width:100%;
+	padding-left:15px;
+}
+section .stwichBox {
+	-webkit-box-flex:1;
+	background:#fff;
+	margin-top:1.5rem;
+}
+section .stwichTab {
+	width:100%;
+	height:5rem;
+	font-size:20px;
+	display:-webkit-box;
+	-webkit-box-orient:horizontal;
+}
+section .stwichTab p {
+	margin:0;
+	padding:0;
+	line-height:5rem;
+	text-align:center;
+	-webkit-box-flex:1;
+	border-bottom:4px solid #eee;
+}
+section .stwichTab .hover {
+	color:deepskyblue;
+	border-bottom:4px solid deepskyblue;
+}
+section .Phonelist {
+	width:100%;
+	height:auto;
+	display:-webkit-box;
+	-webkit-box-orient:horizontal;
+	overflow:hidden;
+}
+section .Phonelist .list {
+	width:100%;
+	height:auto;
+}
+section .Phonelist .list .phoneCostMod {
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+	width:30%;
+	height:4rem;
+	color:#ccc;
+	border:1px solid #ccc;
+	border-radius:5px;
+	margin:2% 0;
+	margin-left:2%;
+	float:left;
+	outline:none;
+	background:#fff;
+	overflow:hidden;
+}
+section .Phonelist .list .phoneCostMod p {
+	font-size:16px;
+	margin:0;
+	padding-top:5px;
+	text-align:center;
+}
+section .Phonelist .list .phoneCostMod span {
+	display:block;
+	font-size:14px;
+	text-align:center;
+}
+section .Phonelist .list .disAbled {
+	background:#fff;
+	color:deepskyblue;
+	border:1px solid skyblue;
+}
+section .Phonelist .list .selected {
+	background:deepskyblue;
+	color:white;
+}
+section .payBtn {
+	clear:both;
+	width:100%;
+	height:6rem;
+	background:#fff;
+	margin-top:20px;
+}
+section .payBtn button {
+	width:80%;
+	height:4rem;
+	margin:20px 10%;
+	background:#ccc;
+	border:none;
+	font-size:16px;
+	color:white;
+	border-radius:10px;
+	outline:none;
+}
+section .payBtn .payDis {
+	background:#00BFFF;
+}
+</style>
+</head>
+<body>
+<div class="warp">
+    <header><a class="btn btn-primary btn-sm" style="float: left;margin-top: 5px;" href="/hbdl/">返回</a>知识题库</header>
+    <form action="/search/" method="POST">
+         <div class="row" style="width: 80%; margin: 0 auto; ">
+            <div class="input-group">
+              <input name="value" type="text" class="form-control" placeholder="输入题目前六个字">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">搜索</button>
+              </span>
+            </div><!-- /input-group -->
+        </div><!-- /.row -->
+    </form>
+    <div>
+        {% for i in data %}
+            <div style=" width: 95%;height:260px;margin: 0 auto; margin-top: 8px;background-color: yellow;" >
+
+              <div style="width: 95%;height: 100px;">
+                  <p>第{{ i.SID }}题</p>
+                  <h5 style="text-align:center;">{{ i.SID }}.{{ i.rubric }}</h5>
+              </div>
+              <div style="width: 95%;height: 30px; margin-top:80px;">
+                  <h5 style="text-align:center;">答案：{{ i.answer }}</h5>
+              </div>
+              <div style="width: 95%;height: 40px;">
+                  <h5 style="text-align:center;">{{ i.option }}</h5>
+              </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

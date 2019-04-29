@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>JN视频解析工具</title>
+	<meta name=”viewport” content=”width=device-width, initial-scale=1″ />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="My Play Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap -->
+<link href="/static/bootstrap/css/bootstrap.min.css" rel='stylesheet' type='text/css' media="all" />
+<!-- //bootstrap -->
+<link href="/static/css/dashboard.css" rel="stylesheet">
+<!-- Custom Theme files -->
+<link href="/static/css/style1.css" rel='stylesheet' type='text/css' media="all" />
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+<!--start-smoth-scrolling-->
+<!-- fonts -->
+<link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<!-- //fonts -->
+</head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" >
+      <div class="container-fluid">
+        <div class="navbar-header col-md-2">
+          <a class="navbar-brand col-md-2  col-xs-8" href="addVideo"><h1><img style="height: 50px;width: 200px;" src="/static/img/0012.png" alt="" /></h1></a>
+        </div>
+			<div>
+				<form action="single" method="POST">
+
+                  <div class="col-lg-6" style="height: 40px;">
+                        <div class="input-group" style="margin-top: 8px;">
+                          <input type="text" class="form-control" name="url" placeholder="请输入视频网址">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">视频播放</button>
+							  	<button style="float: right; right: -180px;top: -34px;" class="btn btn-warning hidden-xs"><a href="addVideo">添加视频</a></button>
+                          </span>
+                        </div><!-- /input-group -->
+                      </div><!-- /.col-lg-6 -->
+				</form>
+            </div>
+		<div class="clearfix"> </div>
+      </div>
+    </nav>
+	<!--移动端-->
+	<div class="visible-xs" style="margin: 0 auto;">
+				<p><h4 style="margin-top: 30px;"><b>资源网站</b></h4></p>
+				<div style="width: 45%;float: left; margin-left: 10px;margin-top: 10px;" >
+					<a href="https://v.qq.com/" target="_blank"><img style="height: 60px;width: 150px;" src="http://www.1dian0.com/uploads/image/20170402/1491149991.jpg" alt="" /></a>
+				</div>
+				<div style="width: 45%;float: left; margin-top: 10px;" >
+					<a href="http://www.youku.com/" target="_blank"><img style="height: 60px;width: 150px;" src="http://imgup02.iefans.net/iefans/2018-07/01/15/15304296582386_0.jpg" alt="" /></a>
+				</div>
+				<div style="width: 45%;float: left;margin-top: 10px;" >
+					<a href="https://www.iqiyi.com/" target="_blank" ><img style="height: 80px;width: 150px;" src="https://ws3.sinaimg.cn/large/005BYqpgly1g0l2hg40d9j30at061gli.jpg" alt="" /></a>
+				</div>
+				<div style="width: 45%;float: left; margin-left: 15px;margin-top: 22px;" >
+					<a href="https://www.mgtv.com/" target="_blank" ><img style="height: 55px;width: 150px;" src="https://ws3.sinaimg.cn/large/005BYqpgly1g0l2fya3baj30hs07674c.jpg" alt="" /></a>
+				</div>
+			</div>
+	<!--移动端-->
+	<div class="visible-xs">
+		<div style="width: 95%; margin: 0 auto;height: 450px;float: left; ">
+				<p><h4 style="margin-top: 10px;"><b>电影</b></h4></p>
+				{% for i in movie %}
+					<div style="width: 100px;height:200px;float: left; margin-left: 10px;" >
+						<form action="single" method="POST">
+							<button type="submit" name="url" value="{{ i.videourl }}" style="background-color: #fff;">
+								<img src="{{ i.photourl }}" style="width: 90px;height: 130px;"/>
+							</button>
+						</form>
+						<div style="text-align:center;">`
+							<h5><b>{{ i.name }}</b></h5>
+						</div>
+
+					</div>
+				{% endfor %}
+			</div>
+
+	</div>
+
+	<!--pc端-->
+	<div class="hidden-xs" style="margin: 0 auto;margin-top: 20px;">
+				<p><h3 style="margin-top: 50px;margin-left: 60px;">资源网站</h3></p>
+				<div style="width: 20%;float: left; margin-left: 100px;" >
+					<a href="https://v.qq.com/" target="_blank"><img style="height: 100px;width: 210px;" src="http://www.1dian0.com/uploads/image/20170402/1491149991.jpg" alt="" /></a>
+				</div>
+				<div style="width: 20%;float: left; margin-top: -18px; margin-left: 10px;" >
+					<a href="https://www.iqiyi.com/" target="_blank" ><img style="height: 140px;width: 260px;" src="https://ws3.sinaimg.cn/large/005BYqpgly1g0l2hg40d9j30at061gli.jpg" alt="" /></a>
+				</div>
+				<div style="width: 20%;float: left; margin-left: 10px;" >
+					<a href="http://www.youku.com/" target="_blank"><img style="height: 100px;width: 210px;" src="http://imgup02.iefans.net/iefans/2018-07/01/15/15304296582386_0.jpg" alt="" /></a>
+				</div>
+				<div style="width: 20%;float: left; margin-left: 10px;" >
+					<a href="https://www.mgtv.com/" target="_blank"><img style="height: 100px;width: 210px;" src="https://ws3.sinaimg.cn/large/005BYqpgly1g0l2fya3baj30hs07674c.jpg" alt="" /></a>
+				</div>
+			</div>
+	<!--pc端-->
+	<div class="hidden-xs">
+	<div style="width: 95%; margin: 0 auto;float: left; margin-left: 30px; ">
+			<p><h3 style="margin-top: 5px;margin-left:30px; ">电影</h3></p>
+			{% for i in movie %}
+				<div style="width: 13%;float: left; margin-left: 30px;" >
+					<form action="single" method="POST">
+						<button type="submit" name="url" value="{{ i.videourl }}" style="background-color: #fff;">
+							<img src="{{ i.photourl }}" style="width: 100%;height: 210px;"/>
+						</button>
+					</form>
+					<div style="text-align:center;">
+						<h5><b>{{ i.name }}</b></h5>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+    <script src="/static/js/bootstrap.min.js"></script>
+  </body>
+</html>
