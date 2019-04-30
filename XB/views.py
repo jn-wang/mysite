@@ -6,7 +6,8 @@ def XB(request):
     variety = models.XB.objects.filter(type='1').order_by('-id')[:6]
     teleplay = models.XB.objects.filter(type='2').order_by('-id')[:6]
     return render(request, 'XB/index.html',{'movie':movie,'variety':variety,'teleplay':teleplay,})
-
+def video(request):
+    return render(request, 'XB/video.html')
 def movies(request):
     return render(request, 'XB/movies.html')
 def music(request):
